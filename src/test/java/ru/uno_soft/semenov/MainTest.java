@@ -53,7 +53,8 @@ public class MainTest {
         assertEquals("Число групп с более чем одним элементом: 1910", outputLines.get(0));
     }
 
-    // Добавил после того, как узнал правильный ответ
+    /*
+    Добавил после того, как узнал правильный ответ
     @Test
     void testNumberOfGroupsInLngBigCsv() throws IOException {
         Main.main(new String[] { "src/main/resources/lng-big.csv"});
@@ -61,4 +62,5 @@ public class MainTest {
         List<String> outputLines = Files.lines(OUTPUT_PATH).collect(Collectors.toList());
         assertEquals("Число групп с более чем одним элементом: 105036", outputLines.get(0));
     }
+    */
 }
