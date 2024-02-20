@@ -1,0 +1,32 @@
+plugins {
+    id 'java'
+}
+
+group = 'ru.uno_soft'
+version = '1.0-SNAPSHOT'
+compileJava.options.encoding = 'UTF-8'
+compileTestJava.options.encoding = 'UTF-8'
+
+tasks.withType(JavaExec).configureEach {
+    maxHeapSize = '1g'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.9.1')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'ru.uno_soft.semenov.Main'
+    }
+}
+
+test {
+    useJUnitPlatform()
+    jvmArgs = ['-Xmx1g'] // Ограничение по памяти
+}
